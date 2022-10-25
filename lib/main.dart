@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math';
 
+import 'package:sizer/sizer.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -11,9 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+    return Sizer(
+      builder: (context, orientation, devicetype) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: MyHomePage(),
+        );
+      },
     );
   }
 }
@@ -68,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var rng = Random();
     for (var i = 0; i < 1; i++) {
       derece = rng.nextInt(26) + 1;
-      print(derece);
+      //print(derece);
     }
   }
 
@@ -619,70 +625,78 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget anaSayfa() {
     return Padding(
-      padding: const EdgeInsets.only(left: 250, right: 250, top: 100),
+      padding: EdgeInsets.only(left: 17.24.w, right: 16.25.w, top: 13.07.h),
       child: Container(
         child: Center(
           child: Column(
             children: [
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: 2.61.h),
                   child: Column(
                     children: [
                       Text(
                         "Keyboard Test Game",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 27,
+                            fontSize: 5.sp,
                             fontWeight: FontWeight.bold),
                       ),
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 12, left: 120),
+                            padding: EdgeInsets.only(
+                                top: 1.56.h, left: 7.72.w, bottom: 1.56.w),
                             child: Column(
                               children: [
                                 Text(
                                   "Score",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 22,
+                                      fontSize: 4.07.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
-                                  height: 5,
+                                  height: 0.65.h,
                                 ),
-                                Text(
-                                  "$score",
-                                  style: TextStyle(
-                                      color: Colors.grey[700],
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
+                                Padding(
+                                  padding: EdgeInsets.only(),
+                                  child: Text(
+                                    "$score",
+                                    style: TextStyle(
+                                        color: Colors.grey[700],
+                                        fontSize: 3.70.sp,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ],
                             ),
                           ),
                           Spacer(),
                           Padding(
-                            padding: const EdgeInsets.only(top: 12, right: 120),
+                            padding: EdgeInsets.only(
+                                top: 1.56.h, right: 7.72.w, bottom: 1.56.w),
                             child: Column(
                               children: [
                                 Text(
                                   "Best score",
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 22,
+                                      fontSize: 4.07.sp,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
-                                  height: 5,
+                                  height: 0.65.h,
                                 ),
-                                Text(
-                                  "$bestScore",
-                                  style: TextStyle(
-                                      color: Colors.grey[700],
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
+                                Padding(
+                                  padding: EdgeInsets.only(),
+                                  child: Text(
+                                    "$bestScore",
+                                    style: TextStyle(
+                                        color: Colors.grey[700],
+                                        fontSize: 3.70.sp,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ],
                             ),
@@ -692,11 +706,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-                height: 150,
-                width: 1500,
+                height: 19.61.h,
+                width: 96.62.w,
                 decoration: BoxDecoration(
                   color: Color(0xFF2B2929),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(2.61.h),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(1.0),
@@ -709,14 +723,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 // tuş kombinasyonları
               ),
               SizedBox(
-                height: 38,
+                height: 4.96.h,
               ),
               Container(
-                height: 380,
-                width: 1500,
+                height: 49.69.h,
+                width: 96.62.w,
                 decoration: BoxDecoration(
                   color: Color(0xFF2B2929),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(2.61.h),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(1.0),
@@ -728,11 +742,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 // tuş kombinasyonları
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 6.53.h),
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: EdgeInsets.only(left: 1.28.w),
                         child: Row(
                           children: [
                             _tusTakimi("Q", derece == 1 ? kutuRenk : siyah),
@@ -751,7 +765,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 60, top: 10),
+                        padding: EdgeInsets.only(left: 3.86.w, top: 1.30.h),
                         child: Row(
                           children: [
                             _tusTakimi("A", derece == 11 ? kutuRenk : siyah),
@@ -769,7 +783,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 100, top: 10),
+                        padding: EdgeInsets.only(left: 6.43.w, top: 1.30.h),
                         child: Row(
                           children: [
                             _tusTakimi("Z", derece == 20 ? kutuRenk : siyah),
@@ -785,7 +799,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               onTap: () {},
                               child: __tusTakimi(Icon(
                                 Icons.restart_alt,
-                                size: 27,
+                                size: 5.sp,
                                 color: Colors.white,
                               )),
                             ),
@@ -805,12 +819,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _tusTakimi(String harf, Color _color) {
     return Padding(
-      padding: const EdgeInsets.all(9.0),
+      padding: EdgeInsets.symmetric(vertical: 1.17.h, horizontal: 0.57.w),
       child: Container(
-        height: 65,
-        width: 65,
+        height: 8.5.h,
+        width: 4.17.w,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: BorderRadius.circular(1.7.h),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
@@ -827,7 +841,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Text(
                 "$harf",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 3.70.sp,
+                ),
               ),
             ],
           ),
@@ -838,12 +855,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget __tusTakimi(Icon icon) {
     return Padding(
-      padding: const EdgeInsets.all(9.0),
+      padding: EdgeInsets.symmetric(vertical: 1.17.h, horizontal: 0.57.w),
       child: Container(
-        height: 65,
-        width: 65,
+        height: 8.5.h,
+        width: 4.17.w,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: BorderRadius.circular(1.7.h),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
